@@ -8,8 +8,8 @@ const typeDefs = gql`
      lastUpdate: String!
  }
  type DailyData {
-     confirmed: String!
-     deaths: String!
+     confirmed: String
+     deaths: String
      date: String
  }
  type Query {

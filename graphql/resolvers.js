@@ -30,6 +30,13 @@ const resolvers = {
             try {
                 const dailyData = await axios.get('https://api.covidtracking.com/v1/us/daily.json')
                 const data = dailyData.data
+                const arrData = data.map(arr => ({
+                    confirmed: arr.positive,
+                    deaths: arr.death,
+                    date: arr.dateChecked
+                }))
+                console.log(arrData)
+                return arrData
             } catch (error) {
                 throw new Error(error)
             }
