@@ -7,12 +7,15 @@ const typeDefs = gql`
      deaths: String!
      lastUpdate: String!
  }
- type CountryPicker {
-     countries: String!
+ type DailyData {
+     confirmed: String!
+     deaths: String!
+     date: String
  }
  type Query {
      getCards: Cards
-     getCountries: CountryPicker
+     getCountries: [String]
+     getDailyData: [DailyData]
  }
 `
 module.exports = typeDefs
