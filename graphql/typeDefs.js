@@ -13,9 +13,11 @@ const typeDefs = gql`
      date: String
  }
  type Query {
-     getCards: Cards
      getCountries: [String]
      getDailyData: [DailyData]
+ }
+ type  Mutation {
+    getCards(country: String): Cards   
  }
 `
 module.exports = typeDefs
